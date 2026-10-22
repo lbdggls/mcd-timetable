@@ -1,0 +1,8 @@
+.env
+data/collect.log
+__pycache__/
+*.pyc
+/preview.png
+/preview2.png
+/sample.bat
+/publish.bat
