@@ -3,6 +3,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>麦门时刻表 · 一家麦当劳的菜单一天换几次</title>
+<meta property="og:title" content="麦当劳的菜单，是一张时刻表">
+<meta property="og:description" content="每 10 分钟采样一次门店在售菜单，记录一天里几点开市、几点换班、换掉了什么。">
+<meta property="og:image" content="https://lbdggls.github.io/mcd-timetable/docs/share-card.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root { color-scheme: dark; }
 body { margin:0; background:#0a0e13; color:#d8e0ea; font:15px/1.7 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
@@ -12,7 +17,7 @@ h2 { font-size:15px; margin:40px 0 8px; font-weight:600; color:#c9d4e2; }
 .lead { color:#94a3b5; margin:0; font-size:16px; }
 .takeaway { margin:20px 0 2px; color:#e6eef7; font-size:18px; font-weight:500; }
 .status { display:inline-flex; align-items:center; gap:8px; margin:16px 0 0; padding:5px 12px; border:1px solid #1e2733; border-radius:999px; font-size:12.5px; color:#9fb0c4; }
-.dot { width:7px; height:7px; border-radius:50%; background:#3ddc97; box-shadow:0 0 8px #3ddc97; }
+.dot { width:7px; height:7px; border-radius:50%; background:#f6c453; box-shadow:0 0 8px #f6c453; }
 .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:24px 0 0; }
 .stats div { border:1px solid #141c26; border-radius:10px; padding:12px 14px; background:#0d1319; }
 .stats b { display:block; font-size:19px; color:#cfe0f0; font-weight:600; }
@@ -48,9 +53,9 @@ code { background:#111820; padding:1px 5px; border-radius:4px; font-size:12.5px;
 <body><div class="wrap">
 <h1>麦门时刻表</h1>
 <p class="lead">麦当劳的菜单不是一张纸，是一张时刻表。每 10 分钟记录一次门店在售菜单，看它几点换班、几点清零。</p>
-<div class="status"><span class="dot"></span>记录中 · 最近一次 10-22 14:00</div>
+<div class="status"><span class="dot"></span>采样中断 111 分钟 · 最近一次 10-22 14:10</div>
 <p class="takeaway">2 家店在 10:32 换班。</p>
-<div class="stats"><div><b>5</b><span>家门店</span></div><div><b>28</b><span>轮采样</span></div><div><b>2</b><span>次换班</span></div></div>
+<div class="stats"><div><b>5</b><span>家门店</span></div><div><b>29</b><span>轮采样</span></div><div><b>2</b><span>次换班</span></div></div>
 <h2>换班记录</h2>
 <p class="legend">每一次换班，下架了什么、上架了什么。分类后面的数字是这一版里的款数；换班时刻记为第一次观测到新菜单的采样点，真实切换发生在两次采样之间（间隔约 10 分钟）。</p>
 <article class="card swap"><header><b>10:32</b><span class="verb">换班</span><span class="who">赛西科技大厦餐厅 · 下架 7 类，上架 11 类</span></header><div class="diff"><span class="tag off">下架</span><span>麦满分系列 <i>32</i>　6折起 早餐卡专区 <i>7</i>　炒双蛋堡 系列 <i>6</i>　早安营养卷 <i>6</i>　超值早餐 <i>3</i>　粥王系列 <i>3</i>　一早现磨 <i>1</i></span></div><div class="diff"><span class="tag on">上架</span><span>巨无霸 牛鱼肉堡 <i>19</i>　鸡肉汉堡 /卷 <i>15</i>　炸鸡 <i>11</i>　小食拼盘 /多人餐 <i>7</i>　蘸酱炸鸡 <i>6</i>　安格斯MAX 厚牛堡 <i>6</i>　500 大卡套餐 <i>6</i>　精选单人餐 <i>4</i>　等 11 类</span></div></article><article class="card swap"><header><b>10:32</b><span class="verb">换班</span><span class="who">深大沧海餐厅 · 下架 5 类，上架 11 类</span></header><div class="diff"><span class="tag off">下架</span><span>麦满分系列 <i>23</i>　6折起 早餐卡专区 <i>7</i>　炒双蛋堡 系列 <i>6</i>　早安营养卷 <i>6</i>　超值早餐 <i>3</i></span></div><div class="diff"><span class="tag on">上架</span><span>巨无霸 牛鱼肉堡 <i>19</i>　鸡肉汉堡 /卷 <i>15</i>　炸鸡 <i>11</i>　小食拼盘 /多人餐 <i>7</i>　蘸酱炸鸡 <i>6</i>　安格斯MAX 厚牛堡 <i>6</i>　精选单人餐 <i>4</i>　随心配 1+1 <i>2</i>　等 11 类</span></div></article>
@@ -58,284 +63,287 @@ code { background:#111820; padding:1px 5px; border-radius:4px; font-size:12.5px;
 <p class="legend">每个色块是一版菜单，块里的数字是当时能点多少款。</p>
 <svg viewBox="0 0 1180 300" width="100%" role="img" aria-label="各门店菜单时刻表">
 <text x="0" y="58" fill="#7d8899" font-size="11.5">10月22日　5 家店</text>
-<line x1="358.0" y1="72" x2="358.0" y2="246" stroke="#1a232e"/>
-<text x="358.0" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="596.7" y1="72" x2="596.7" y2="246" stroke="#1a232e"/>
-<text x="596.7" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="835.5" y1="72" x2="835.5" y2="246" stroke="#1a232e"/>
-<text x="835.5" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1074.3" y1="72" x2="1074.3" y2="246" stroke="#1a232e"/>
-<text x="1074.3" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
-<line x1="246.5" y1="72" x2="246.5" y2="246" stroke="#f6c453" stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>
-<text x="246.5" y="68" fill="#f6c453" font-size="10.5" text-anchor="middle">10:32 换班</text>
-<line x1="1074.7" y1="72" x2="1074.7" y2="246" stroke="#ff5d73" stroke-width="1.2"/>
-<text x="1074.7" y="68" fill="#ff5d73" font-size="10.5" text-anchor="middle">现在</text>
+<line x1="351.5" y1="72" x2="351.5" y2="246" stroke="#1a232e"/>
+<text x="351.5" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="580.8" y1="72" x2="580.8" y2="246" stroke="#1a232e"/>
+<text x="580.8" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="810.0" y1="72" x2="810.0" y2="246" stroke="#1a232e"/>
+<text x="810.0" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1039.2" y1="72" x2="1039.2" y2="246" stroke="#1a232e"/>
+<text x="1039.2" y="262" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="244.5" y1="72" x2="244.5" y2="246" stroke="#f6c453" stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>
+<text x="244.5" y="68" fill="#f6c453" font-size="10.5" text-anchor="middle">10:32 换班</text>
 <text x="182" y="87.0" fill="#c2cedd" font-size="12.5" text-anchor="end">赛西科技大厦餐厅</text>
 <text x="182" y="100.0" fill="#4b5867" font-size="9.5" text-anchor="end">404 m · 07:00-23:00</text>
-<rect x="235.8" y="76" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:29–10:39 · 108 款</title></rect>
-<rect x="247.1" y="76" width="825.7" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:32–14:00 · 134 款</title></rect>
-<text x="660.8" y="88.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">134 款</text>
-<rect x="1074.4" y="76" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:10 · 136 款</title></rect>
+<rect x="234.2" y="76" width="36.6" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:29–10:39 · 108 款</title></rect>
+<rect x="245.1" y="76" width="792.7" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:32–14:00 · 134 款</title></rect>
+<text x="642.3" y="88.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">134 款</text>
+<rect x="1039.4" y="76" width="74.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:20 · 136 款</title></rect>
+<text x="1077.6" y="88.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">136 款</text>
 <text x="182" y="121.0" fill="#c2cedd" font-size="12.5" text-anchor="end">软件产业基地餐厅</text>
 <text x="182" y="134.0" fill="#4b5867" font-size="9.5" text-anchor="end">505 m · 07:00-23:00</text>
-<rect x="330.9" y="110" width="742.0" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–14:00 · 140 款</title></rect>
-<text x="702.7" y="122.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">140 款</text>
-<rect x="1074.4" y="110" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:10 · 142 款</title></rect>
+<rect x="325.5" y="110" width="712.3" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–14:00 · 140 款</title></rect>
+<text x="682.5" y="122.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">140 款</text>
+<rect x="1039.4" y="110" width="74.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:20 · 142 款</title></rect>
+<text x="1077.6" y="122.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">142 款</text>
 <text x="182" y="155.0" fill="#c2cedd" font-size="12.5" text-anchor="end">厚德品园餐厅</text>
 <text x="182" y="168.0" fill="#4b5867" font-size="9.5" text-anchor="end">580 m · 07:00-23:00</text>
-<rect x="330.9" y="144" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–11:03 · 132 款</title></rect>
-<rect x="358.1" y="144" width="396.4" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>11:00–12:40 · 131 款</title></rect>
-<text x="557.1" y="156.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">131 款</text>
-<rect x="756.0" y="144" width="316.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>12:40–14:00 · 133 款</title></rect>
-<text x="915.3" y="156.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">133 款</text>
-<rect x="1074.4" y="144" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:10 · 135 款</title></rect>
+<rect x="325.5" y="144" width="36.6" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–11:03 · 132 款</title></rect>
+<rect x="351.6" y="144" width="380.5" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>11:00–12:40 · 131 款</title></rect>
+<text x="542.7" y="156.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">131 款</text>
+<rect x="733.7" y="144" width="304.1" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>12:40–14:00 · 133 款</title></rect>
+<text x="886.6" y="156.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">133 款</text>
+<rect x="1039.4" y="144" width="74.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:20 · 135 款</title></rect>
+<text x="1077.6" y="156.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">135 款</text>
 <text x="182" y="189.0" fill="#c2cedd" font-size="12.5" text-anchor="end">深大沧海餐厅</text>
 <text x="182" y="202.0" fill="#4b5867" font-size="9.5" text-anchor="end">718 m · 07:00-22:00</text>
-<rect x="235.8" y="178" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:29–10:39 · 72 款</title></rect>
-<rect x="247.1" y="178" width="88.5" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:32–10:54 · 111 款</title></rect>
-<text x="292.2" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">111 款</text>
-<rect x="317.6" y="178" width="277.7" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:49–12:00 · 113 款</title></rect>
-<text x="457.3" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">113 款</text>
-<rect x="596.9" y="178" width="476.0" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>12:00–14:00 · 112 款</title></rect>
-<text x="835.7" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">112 款</text>
-<rect x="1074.4" y="178" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:10 · 114 款</title></rect>
+<rect x="234.2" y="178" width="36.6" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:29–10:39 · 72 款</title></rect>
+<rect x="245.1" y="178" width="84.9" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:32–10:54 · 111 款</title></rect>
+<text x="288.3" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">111 款</text>
+<rect x="312.8" y="178" width="266.6" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:49–12:00 · 113 款</title></rect>
+<text x="446.9" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">113 款</text>
+<rect x="580.9" y="178" width="457.0" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>12:00–14:00 · 112 款</title></rect>
+<text x="810.2" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">112 款</text>
+<rect x="1039.4" y="178" width="74.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:20 · 114 款</title></rect>
+<text x="1077.6" y="190.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">114 款</text>
 <text x="182" y="223.0" fill="#c2cedd" font-size="12.5" text-anchor="end">高新南十道餐厅</text>
 <text x="182" y="236.0" fill="#4b5867" font-size="9.5" text-anchor="end">737 m · 07:00-22:00</text>
-<rect x="330.9" y="212" width="742.0" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–14:00 · 124 款</title></rect>
-<text x="702.7" y="224.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">124 款</text>
-<rect x="1074.4" y="212" width="38.2" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:10 · 126 款</title></rect>
+<rect x="325.5" y="212" width="712.3" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>10:53–14:00 · 124 款</title></rect>
+<text x="682.5" y="224.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">124 款</text>
+<rect x="1039.4" y="212" width="74.8" height="20" rx="3" fill="#3ddc97" opacity="0.22" stroke="#3ddc97" stroke-opacity="0.5" stroke-width="1"><title>14:00–14:20 · 126 款</title></rect>
+<text x="1077.6" y="224.0" fill="#e6eef7" font-size="11.5" text-anchor="middle">126 款</text>
 <text x="196" y="292" fill="#4b5867" font-size="10.5">横向：有数据的时段（自动缩放）　纵向：每家店一条，色块是一版菜单</text>
 </svg>
 <h2>此刻各店</h2>
-<table class="snapshot"><thead><tr><th>门店</th><th>距离</th><th>营业</th><th>此刻在售</th><th>距关门</th></tr></thead><tbody><tr><td>深圳赛西科技大厦餐厅</td><td class="num">404 m</td><td class="num">07:00-23:00</td><td class="num strong">136</td><td class="num ">9h00m</td></tr><tr><td>深圳软件产业基地餐厅</td><td class="num">505 m</td><td class="num">07:00-23:00</td><td class="num strong">142</td><td class="num ">9h00m</td></tr><tr><td>深圳厚德品园餐厅</td><td class="num">580 m</td><td class="num">07:00-23:00</td><td class="num strong">135</td><td class="num ">9h00m</td></tr><tr><td>深圳深大沧海餐厅</td><td class="num">718 m</td><td class="num">07:00-22:00</td><td class="num strong">114</td><td class="num ">8h00m</td></tr><tr><td>深圳高新南十道餐厅</td><td class="num">737 m</td><td class="num">07:00-22:00</td><td class="num strong">126</td><td class="num ">8h00m</td></tr></tbody></table>
+<table class="snapshot"><thead><tr><th>门店</th><th>距离</th><th>营业</th><th>此刻在售</th><th>距关门</th></tr></thead><tbody><tr><td>深圳赛西科技大厦餐厅</td><td class="num">404 m</td><td class="num">07:00-23:00</td><td class="num strong">136</td><td class="num ">6h59m</td></tr><tr><td>深圳软件产业基地餐厅</td><td class="num">505 m</td><td class="num">07:00-23:00</td><td class="num strong">142</td><td class="num ">6h59m</td></tr><tr><td>深圳厚德品园餐厅</td><td class="num">580 m</td><td class="num">07:00-23:00</td><td class="num strong">135</td><td class="num ">6h59m</td></tr><tr><td>深圳深大沧海餐厅</td><td class="num">718 m</td><td class="num">07:00-22:00</td><td class="num strong">114</td><td class="num ">5h59m</td></tr><tr><td>深圳高新南十道餐厅</td><td class="num">737 m</td><td class="num">07:00-22:00</td><td class="num strong">126</td><td class="num ">5h59m</td></tr></tbody></table>
 <h2>细节</h2>
 <details><summary>麦当劳深圳赛西科技大厦餐厅 · 逐个分类的出现区间</summary><svg viewBox="0 0 1180 554" width="100%" role="img" aria-label="麦当劳深圳赛西科技大厦餐厅 各分类出现区间">
 <line x1="168.0" y1="22" x2="168.0" y2="524" stroke="#1a232e"/>
 <text x="168.0" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">10:00</text>
-<line x1="403.6" y1="22" x2="403.6" y2="524" stroke="#1a232e"/>
-<text x="403.6" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="639.3" y1="22" x2="639.3" y2="524" stroke="#1a232e"/>
-<text x="639.3" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="874.9" y1="22" x2="874.9" y2="524" stroke="#1a232e"/>
-<text x="874.9" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1110.6" y1="22" x2="1110.6" y2="524" stroke="#1a232e"/>
-<text x="1110.6" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="394.6" y1="22" x2="394.6" y2="524" stroke="#1a232e"/>
+<text x="394.6" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="621.2" y1="22" x2="621.2" y2="524" stroke="#1a232e"/>
+<text x="621.2" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="847.8" y1="22" x2="847.8" y2="524" stroke="#1a232e"/>
+<text x="847.8" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1074.3" y1="22" x2="1074.3" y2="524" stroke="#1a232e"/>
+<text x="1074.3" y="542" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
 <text x="158" y="45.0" fill="#8b98aa" font-size="11.5" text-anchor="end">人气热卖</text>
-<rect x="283.1" y="34" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:29 → 14:10 · 最多 10 款</title></rect>
+<rect x="278.6" y="34" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:29 → 14:20 · 最多 10 款</title></rect>
 <text x="158" y="67.0" fill="#8b98aa" font-size="11.5" text-anchor="end">超值早餐</text>
-<rect x="283.1" y="56" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>超值早餐 · 10:29 → 10:32 · 最多 3 款</title></rect>
+<rect x="278.6" y="56" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>超值早餐 · 10:29 → 10:32 · 最多 3 款</title></rect>
 <text x="158" y="89.0" fill="#8b98aa" font-size="11.5" text-anchor="end">6折起 早餐卡专区</text>
-<rect x="283.1" y="78" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>6折起 早餐卡专区 · 10:29 → 10:32 · 最多 7 款</title></rect>
+<rect x="278.6" y="78" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>6折起 早餐卡专区 · 10:29 → 10:32 · 最多 7 款</title></rect>
 <text x="158" y="111.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦满分系列</text>
-<rect x="283.1" y="100" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦满分系列 · 10:29 → 10:32 · 最多 32 款</title></rect>
+<rect x="278.6" y="100" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦满分系列 · 10:29 → 10:32 · 最多 32 款</title></rect>
 <text x="158" y="133.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦咖啡™</text>
-<rect x="283.1" y="122" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:29 → 14:10 · 最多 14 款</title></rect>
+<rect x="278.6" y="122" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:29 → 14:20 · 最多 14 款</title></rect>
 <text x="158" y="155.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炒双蛋堡 系列</text>
-<rect x="283.1" y="144" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>炒双蛋堡 系列 · 10:29 → 10:32 · 最多 6 款</title></rect>
+<rect x="278.6" y="144" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>炒双蛋堡 系列 · 10:29 → 10:32 · 最多 6 款</title></rect>
 <text x="158" y="177.0" fill="#8b98aa" font-size="11.5" text-anchor="end">早安营养卷</text>
-<rect x="283.1" y="166" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>早安营养卷 · 10:29 → 10:32 · 最多 6 款</title></rect>
+<rect x="278.6" y="166" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>早安营养卷 · 10:29 → 10:32 · 最多 6 款</title></rect>
 <text x="158" y="199.0" fill="#8b98aa" font-size="11.5" text-anchor="end">一早现磨</text>
-<rect x="283.1" y="188" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>一早现磨 · 10:29 → 10:32 · 最多 1 款</title></rect>
+<rect x="278.6" y="188" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>一早现磨 · 10:29 → 10:32 · 最多 1 款</title></rect>
 <text x="158" y="221.0" fill="#8b98aa" font-size="11.5" text-anchor="end">粥王系列</text>
-<rect x="283.1" y="210" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>粥王系列 · 10:29 → 10:32 · 最多 3 款</title></rect>
+<rect x="278.6" y="210" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>粥王系列 · 10:29 → 10:32 · 最多 3 款</title></rect>
 <text x="158" y="243.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食甜品 /其他</text>
-<rect x="283.1" y="232" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:29 → 14:10 · 最多 17 款</title></rect>
+<rect x="278.6" y="232" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:29 → 14:20 · 最多 17 款</title></rect>
 <text x="158" y="265.0" fill="#8b98aa" font-size="11.5" text-anchor="end">饮品</text>
-<rect x="283.1" y="254" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:29 → 14:10 · 最多 17 款</title></rect>
+<rect x="278.6" y="254" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:29 → 14:20 · 最多 17 款</title></rect>
 <text x="158" y="287.0" fill="#8b98aa" font-size="11.5" text-anchor="end">精选单人餐</text>
-<rect x="294.3" y="276" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:32 → 14:10 · 最多 4 款</title></rect>
+<rect x="289.4" y="276" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:32 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="309.0" fill="#8b98aa" font-size="11.5" text-anchor="end">鸡肉汉堡 /卷</text>
-<rect x="294.3" y="298" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:32 → 14:10 · 最多 16 款</title></rect>
+<rect x="289.4" y="298" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:32 → 14:20 · 最多 16 款</title></rect>
 <text x="158" y="331.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食拼盘 /多人餐</text>
-<rect x="294.3" y="320" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:32 → 14:10 · 最多 7 款</title></rect>
+<rect x="289.4" y="320" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:32 → 14:20 · 最多 7 款</title></rect>
 <text x="158" y="353.0" fill="#8b98aa" font-size="11.5" text-anchor="end">蘸酱炸鸡</text>
-<rect x="294.3" y="342" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:32 → 14:10 · 最多 6 款</title></rect>
+<rect x="289.4" y="342" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:32 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="375.0" fill="#8b98aa" font-size="11.5" text-anchor="end">随心配 1+1</text>
-<rect x="294.3" y="364" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:32 → 14:10 · 最多 2 款</title></rect>
+<rect x="289.4" y="364" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:32 → 14:20 · 最多 2 款</title></rect>
 <text x="158" y="397.0" fill="#8b98aa" font-size="11.5" text-anchor="end">大堡口福 单人餐</text>
-<rect x="294.3" y="386" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:32 → 14:10 · 最多 1 款</title></rect>
+<rect x="289.4" y="386" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:32 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="419.0" fill="#8b98aa" font-size="11.5" text-anchor="end">巨无霸 牛鱼肉堡</text>
-<rect x="294.3" y="408" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:32 → 14:10 · 最多 19 款</title></rect>
+<rect x="289.4" y="408" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:32 → 14:20 · 最多 19 款</title></rect>
 <text x="158" y="441.0" fill="#8b98aa" font-size="11.5" text-anchor="end">安格斯MAX 厚牛堡</text>
-<rect x="294.3" y="430" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:32 → 14:10 · 最多 6 款</title></rect>
+<rect x="289.4" y="430" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:32 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="463.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炸鸡</text>
-<rect x="294.3" y="452" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:32 → 14:10 · 最多 11 款</title></rect>
+<rect x="289.4" y="452" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:32 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="485.0" fill="#8b98aa" font-size="11.5" text-anchor="end">开心乐园</text>
-<rect x="294.3" y="474" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>开心乐园 · 10:32 → 14:10 · 最多 4 款</title></rect>
+<rect x="289.4" y="474" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>开心乐园 · 10:32 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="507.0" fill="#8b98aa" font-size="11.5" text-anchor="end">500 大卡套餐</text>
-<rect x="294.3" y="496" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:32 → 14:10 · 最多 6 款</title></rect>
+<rect x="289.4" y="496" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:32 → 14:20 · 最多 6 款</title></rect>
 </svg></details><details><summary>麦当劳深圳软件产业基地餐厅 · 逐个分类的出现区间</summary><svg viewBox="0 0 1180 400" width="100%" role="img" aria-label="麦当劳深圳软件产业基地餐厅 各分类出现区间">
 <line x1="168.0" y1="22" x2="168.0" y2="370" stroke="#1a232e"/>
 <text x="168.0" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">10:00</text>
-<line x1="403.6" y1="22" x2="403.6" y2="370" stroke="#1a232e"/>
-<text x="403.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="639.3" y1="22" x2="639.3" y2="370" stroke="#1a232e"/>
-<text x="639.3" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="874.9" y1="22" x2="874.9" y2="370" stroke="#1a232e"/>
-<text x="874.9" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1110.6" y1="22" x2="1110.6" y2="370" stroke="#1a232e"/>
-<text x="1110.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="394.6" y1="22" x2="394.6" y2="370" stroke="#1a232e"/>
+<text x="394.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="621.2" y1="22" x2="621.2" y2="370" stroke="#1a232e"/>
+<text x="621.2" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="847.8" y1="22" x2="847.8" y2="370" stroke="#1a232e"/>
+<text x="847.8" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1074.3" y1="22" x2="1074.3" y2="370" stroke="#1a232e"/>
+<text x="1074.3" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
 <text x="158" y="45.0" fill="#8b98aa" font-size="11.5" text-anchor="end">人气热卖</text>
-<rect x="376.9" y="34" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:10 · 最多 11 款</title></rect>
+<rect x="368.9" y="34" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="67.0" fill="#8b98aa" font-size="11.5" text-anchor="end">精选单人餐</text>
-<rect x="376.9" y="56" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:10 · 最多 4 款</title></rect>
+<rect x="368.9" y="56" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="89.0" fill="#8b98aa" font-size="11.5" text-anchor="end">鸡肉汉堡 /卷</text>
-<rect x="376.9" y="78" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:10 · 最多 18 款</title></rect>
+<rect x="368.9" y="78" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:20 · 最多 18 款</title></rect>
 <text x="158" y="111.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食拼盘 /多人餐</text>
-<rect x="376.9" y="100" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:10 · 最多 7 款</title></rect>
+<rect x="368.9" y="100" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:20 · 最多 7 款</title></rect>
 <text x="158" y="133.0" fill="#8b98aa" font-size="11.5" text-anchor="end">蘸酱炸鸡</text>
-<rect x="376.9" y="122" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="122" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="155.0" fill="#8b98aa" font-size="11.5" text-anchor="end">随心配 1+1</text>
-<rect x="376.9" y="144" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:10 · 最多 2 款</title></rect>
+<rect x="368.9" y="144" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:20 · 最多 2 款</title></rect>
 <text x="158" y="177.0" fill="#8b98aa" font-size="11.5" text-anchor="end">大堡口福 单人餐</text>
-<rect x="376.9" y="166" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:10 · 最多 1 款</title></rect>
+<rect x="368.9" y="166" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="199.0" fill="#8b98aa" font-size="11.5" text-anchor="end">巨无霸 牛鱼肉堡</text>
-<rect x="376.9" y="188" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:10 · 最多 19 款</title></rect>
+<rect x="368.9" y="188" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:20 · 最多 19 款</title></rect>
 <text x="158" y="221.0" fill="#8b98aa" font-size="11.5" text-anchor="end">安格斯MAX 厚牛堡</text>
-<rect x="376.9" y="210" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="210" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="243.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炸鸡</text>
-<rect x="376.9" y="232" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:10 · 最多 11 款</title></rect>
+<rect x="368.9" y="232" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="265.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食甜品 /其他</text>
-<rect x="376.9" y="254" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:10 · 最多 19 款</title></rect>
+<rect x="368.9" y="254" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:20 · 最多 19 款</title></rect>
 <text x="158" y="287.0" fill="#8b98aa" font-size="11.5" text-anchor="end">开心乐园</text>
-<rect x="376.9" y="276" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>开心乐园 · 10:53 → 14:10 · 最多 4 款</title></rect>
+<rect x="368.9" y="276" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>开心乐园 · 10:53 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="309.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦咖啡™</text>
-<rect x="376.9" y="298" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:53 → 14:10 · 最多 15 款</title></rect>
+<rect x="368.9" y="298" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:53 → 14:20 · 最多 15 款</title></rect>
 <text x="158" y="331.0" fill="#8b98aa" font-size="11.5" text-anchor="end">500 大卡套餐</text>
-<rect x="376.9" y="320" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="320" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="353.0" fill="#8b98aa" font-size="11.5" text-anchor="end">饮品</text>
-<rect x="376.9" y="342" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:10 · 最多 13 款</title></rect>
+<rect x="368.9" y="342" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:20 · 最多 13 款</title></rect>
 </svg></details><details><summary>麦当劳深圳厚德品园餐厅 · 逐个分类的出现区间</summary><svg viewBox="0 0 1180 400" width="100%" role="img" aria-label="麦当劳深圳厚德品园餐厅 各分类出现区间">
 <line x1="168.0" y1="22" x2="168.0" y2="370" stroke="#1a232e"/>
 <text x="168.0" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">10:00</text>
-<line x1="403.6" y1="22" x2="403.6" y2="370" stroke="#1a232e"/>
-<text x="403.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="639.3" y1="22" x2="639.3" y2="370" stroke="#1a232e"/>
-<text x="639.3" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="874.9" y1="22" x2="874.9" y2="370" stroke="#1a232e"/>
-<text x="874.9" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1110.6" y1="22" x2="1110.6" y2="370" stroke="#1a232e"/>
-<text x="1110.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="394.6" y1="22" x2="394.6" y2="370" stroke="#1a232e"/>
+<text x="394.6" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="621.2" y1="22" x2="621.2" y2="370" stroke="#1a232e"/>
+<text x="621.2" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="847.8" y1="22" x2="847.8" y2="370" stroke="#1a232e"/>
+<text x="847.8" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1074.3" y1="22" x2="1074.3" y2="370" stroke="#1a232e"/>
+<text x="1074.3" y="388" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
 <text x="158" y="45.0" fill="#8b98aa" font-size="11.5" text-anchor="end">人气热卖</text>
-<rect x="376.9" y="34" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:10 · 最多 11 款</title></rect>
+<rect x="368.9" y="34" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="67.0" fill="#8b98aa" font-size="11.5" text-anchor="end">精选单人餐</text>
-<rect x="376.9" y="56" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:10 · 最多 4 款</title></rect>
+<rect x="368.9" y="56" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="89.0" fill="#8b98aa" font-size="11.5" text-anchor="end">鸡肉汉堡 /卷</text>
-<rect x="376.9" y="78" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:10 · 最多 16 款</title></rect>
+<rect x="368.9" y="78" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:20 · 最多 16 款</title></rect>
 <text x="158" y="111.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食拼盘 /多人餐</text>
-<rect x="376.9" y="100" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:10 · 最多 7 款</title></rect>
+<rect x="368.9" y="100" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:20 · 最多 7 款</title></rect>
 <text x="158" y="133.0" fill="#8b98aa" font-size="11.5" text-anchor="end">蘸酱炸鸡</text>
-<rect x="376.9" y="122" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>蘸酱炸鸡 · 10:53 → 14:10 · 最多 5 款</title></rect>
+<rect x="368.9" y="122" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>蘸酱炸鸡 · 10:53 → 14:20 · 最多 5 款</title></rect>
 <text x="158" y="155.0" fill="#8b98aa" font-size="11.5" text-anchor="end">随心配 1+1</text>
-<rect x="376.9" y="144" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:10 · 最多 2 款</title></rect>
+<rect x="368.9" y="144" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:20 · 最多 2 款</title></rect>
 <text x="158" y="177.0" fill="#8b98aa" font-size="11.5" text-anchor="end">大堡口福 单人餐</text>
-<rect x="376.9" y="166" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:10 · 最多 1 款</title></rect>
+<rect x="368.9" y="166" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="199.0" fill="#8b98aa" font-size="11.5" text-anchor="end">巨无霸 牛鱼肉堡</text>
-<rect x="376.9" y="188" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:10 · 最多 19 款</title></rect>
+<rect x="368.9" y="188" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:20 · 最多 19 款</title></rect>
 <text x="158" y="221.0" fill="#8b98aa" font-size="11.5" text-anchor="end">安格斯MAX 厚牛堡</text>
-<rect x="376.9" y="210" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="210" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="243.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炸鸡</text>
-<rect x="376.9" y="232" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:10 · 最多 10 款</title></rect>
+<rect x="368.9" y="232" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:20 · 最多 10 款</title></rect>
 <text x="158" y="265.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食甜品 /其他</text>
-<rect x="376.9" y="254" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:10 · 最多 20 款</title></rect>
+<rect x="368.9" y="254" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:20 · 最多 20 款</title></rect>
 <text x="158" y="287.0" fill="#8b98aa" font-size="11.5" text-anchor="end">开心乐园</text>
-<rect x="376.9" y="276" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>开心乐园 · 10:53 → 14:10 · 最多 5 款</title></rect>
+<rect x="368.9" y="276" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>开心乐园 · 10:53 → 14:20 · 最多 5 款</title></rect>
 <text x="158" y="309.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦咖啡™</text>
-<rect x="376.9" y="298" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:53 → 14:10 · 最多 12 款</title></rect>
+<rect x="368.9" y="298" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦咖啡™ · 10:53 → 14:20 · 最多 12 款</title></rect>
 <text x="158" y="331.0" fill="#8b98aa" font-size="11.5" text-anchor="end">500 大卡套餐</text>
-<rect x="376.9" y="320" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="320" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="353.0" fill="#8b98aa" font-size="11.5" text-anchor="end">饮品</text>
-<rect x="376.9" y="342" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:10 · 最多 12 款</title></rect>
+<rect x="368.9" y="342" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:20 · 最多 12 款</title></rect>
 </svg></details><details><summary>麦当劳深圳深大沧海餐厅 · 逐个分类的出现区间</summary><svg viewBox="0 0 1180 510" width="100%" role="img" aria-label="麦当劳深圳深大沧海餐厅 各分类出现区间">
 <line x1="168.0" y1="22" x2="168.0" y2="480" stroke="#1a232e"/>
 <text x="168.0" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">10:00</text>
-<line x1="403.6" y1="22" x2="403.6" y2="480" stroke="#1a232e"/>
-<text x="403.6" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="639.3" y1="22" x2="639.3" y2="480" stroke="#1a232e"/>
-<text x="639.3" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="874.9" y1="22" x2="874.9" y2="480" stroke="#1a232e"/>
-<text x="874.9" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1110.6" y1="22" x2="1110.6" y2="480" stroke="#1a232e"/>
-<text x="1110.6" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="394.6" y1="22" x2="394.6" y2="480" stroke="#1a232e"/>
+<text x="394.6" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="621.2" y1="22" x2="621.2" y2="480" stroke="#1a232e"/>
+<text x="621.2" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="847.8" y1="22" x2="847.8" y2="480" stroke="#1a232e"/>
+<text x="847.8" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1074.3" y1="22" x2="1074.3" y2="480" stroke="#1a232e"/>
+<text x="1074.3" y="498" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
 <text x="158" y="45.0" fill="#8b98aa" font-size="11.5" text-anchor="end">人气热卖</text>
-<rect x="283.1" y="34" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:29 → 14:10 · 最多 11 款</title></rect>
+<rect x="278.6" y="34" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:29 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="67.0" fill="#8b98aa" font-size="11.5" text-anchor="end">超值早餐</text>
-<rect x="283.1" y="56" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>超值早餐 · 10:29 → 10:32 · 最多 3 款</title></rect>
+<rect x="278.6" y="56" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.52"><title>超值早餐 · 10:29 → 10:32 · 最多 3 款</title></rect>
 <text x="158" y="89.0" fill="#8b98aa" font-size="11.5" text-anchor="end">6折起 早餐卡专区</text>
-<rect x="283.1" y="78" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>6折起 早餐卡专区 · 10:29 → 10:32 · 最多 7 款</title></rect>
+<rect x="278.6" y="78" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>6折起 早餐卡专区 · 10:29 → 10:32 · 最多 7 款</title></rect>
 <text x="158" y="111.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦满分系列</text>
-<rect x="283.1" y="100" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦满分系列 · 10:29 → 10:32 · 最多 23 款</title></rect>
+<rect x="278.6" y="100" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>麦满分系列 · 10:29 → 10:32 · 最多 23 款</title></rect>
 <text x="158" y="133.0" fill="#8b98aa" font-size="11.5" text-anchor="end">麦咖啡™</text>
-<rect x="283.1" y="122" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>麦咖啡™ · 10:29 → 14:10 · 最多 5 款</title></rect>
+<rect x="278.6" y="122" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>麦咖啡™ · 10:29 → 14:20 · 最多 5 款</title></rect>
 <text x="158" y="155.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炒双蛋堡 系列</text>
-<rect x="283.1" y="144" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>炒双蛋堡 系列 · 10:29 → 10:32 · 最多 6 款</title></rect>
+<rect x="278.6" y="144" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>炒双蛋堡 系列 · 10:29 → 10:32 · 最多 6 款</title></rect>
 <text x="158" y="177.0" fill="#8b98aa" font-size="11.5" text-anchor="end">早安营养卷</text>
-<rect x="283.1" y="166" width="11.2" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>早安营养卷 · 10:29 → 10:32 · 最多 6 款</title></rect>
+<rect x="278.6" y="166" width="10.8" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>早安营养卷 · 10:29 → 10:32 · 最多 6 款</title></rect>
 <text x="158" y="199.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食甜品 /其他</text>
-<rect x="283.1" y="188" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:29 → 14:10 · 最多 15 款</title></rect>
+<rect x="278.6" y="188" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:29 → 14:20 · 最多 15 款</title></rect>
 <text x="158" y="221.0" fill="#8b98aa" font-size="11.5" text-anchor="end">饮品</text>
-<rect x="283.1" y="210" width="866.9" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:29 → 14:10 · 最多 9 款</title></rect>
+<rect x="278.6" y="210" width="871.4" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:29 → 14:20 · 最多 9 款</title></rect>
 <text x="158" y="243.0" fill="#8b98aa" font-size="11.5" text-anchor="end">精选单人餐</text>
-<rect x="294.3" y="232" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:32 → 14:10 · 最多 4 款</title></rect>
+<rect x="289.4" y="232" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:32 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="265.0" fill="#8b98aa" font-size="11.5" text-anchor="end">鸡肉汉堡 /卷</text>
-<rect x="294.3" y="254" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:32 → 14:10 · 最多 16 款</title></rect>
+<rect x="289.4" y="254" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:32 → 14:20 · 最多 16 款</title></rect>
 <text x="158" y="287.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食拼盘 /多人餐</text>
-<rect x="294.3" y="276" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:32 → 14:10 · 最多 7 款</title></rect>
+<rect x="289.4" y="276" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:32 → 14:20 · 最多 7 款</title></rect>
 <text x="158" y="309.0" fill="#8b98aa" font-size="11.5" text-anchor="end">蘸酱炸鸡</text>
-<rect x="294.3" y="298" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:32 → 14:10 · 最多 6 款</title></rect>
+<rect x="289.4" y="298" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:32 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="331.0" fill="#8b98aa" font-size="11.5" text-anchor="end">随心配 1+1</text>
-<rect x="294.3" y="320" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:32 → 14:10 · 最多 2 款</title></rect>
+<rect x="289.4" y="320" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:32 → 14:20 · 最多 2 款</title></rect>
 <text x="158" y="353.0" fill="#8b98aa" font-size="11.5" text-anchor="end">大堡口福 单人餐</text>
-<rect x="294.3" y="342" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:32 → 14:10 · 最多 1 款</title></rect>
+<rect x="289.4" y="342" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:32 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="375.0" fill="#8b98aa" font-size="11.5" text-anchor="end">巨无霸 牛鱼肉堡</text>
-<rect x="294.3" y="364" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:32 → 14:10 · 最多 19 款</title></rect>
+<rect x="289.4" y="364" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:32 → 14:20 · 最多 19 款</title></rect>
 <text x="158" y="397.0" fill="#8b98aa" font-size="11.5" text-anchor="end">安格斯MAX 厚牛堡</text>
-<rect x="294.3" y="386" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:32 → 14:10 · 最多 6 款</title></rect>
+<rect x="289.4" y="386" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:32 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="419.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炸鸡</text>
-<rect x="294.3" y="408" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:32 → 14:10 · 最多 11 款</title></rect>
+<rect x="289.4" y="408" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:32 → 14:20 · 最多 11 款</title></rect>
 <text x="158" y="441.0" fill="#8b98aa" font-size="11.5" text-anchor="end">开心乐园</text>
-<rect x="294.3" y="430" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>开心乐园 · 10:32 → 14:10 · 最多 1 款</title></rect>
+<rect x="289.4" y="430" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>开心乐园 · 10:32 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="463.0" fill="#8b98aa" font-size="11.5" text-anchor="end">500 大卡套餐</text>
-<rect x="294.3" y="452" width="855.7" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>500 大卡套餐 · 10:32 → 14:10 · 最多 2 款</title></rect>
+<rect x="289.4" y="452" width="860.6" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>500 大卡套餐 · 10:32 → 14:20 · 最多 2 款</title></rect>
 </svg></details><details><summary>麦当劳深圳高新南十道餐厅 · 逐个分类的出现区间</summary><svg viewBox="0 0 1180 378" width="100%" role="img" aria-label="麦当劳深圳高新南十道餐厅 各分类出现区间">
 <line x1="168.0" y1="22" x2="168.0" y2="348" stroke="#1a232e"/>
 <text x="168.0" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">10:00</text>
-<line x1="403.6" y1="22" x2="403.6" y2="348" stroke="#1a232e"/>
-<text x="403.6" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
-<line x1="639.3" y1="22" x2="639.3" y2="348" stroke="#1a232e"/>
-<text x="639.3" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
-<line x1="874.9" y1="22" x2="874.9" y2="348" stroke="#1a232e"/>
-<text x="874.9" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
-<line x1="1110.6" y1="22" x2="1110.6" y2="348" stroke="#1a232e"/>
-<text x="1110.6" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
+<line x1="394.6" y1="22" x2="394.6" y2="348" stroke="#1a232e"/>
+<text x="394.6" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">11:00</text>
+<line x1="621.2" y1="22" x2="621.2" y2="348" stroke="#1a232e"/>
+<text x="621.2" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">12:00</text>
+<line x1="847.8" y1="22" x2="847.8" y2="348" stroke="#1a232e"/>
+<text x="847.8" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">13:00</text>
+<line x1="1074.3" y1="22" x2="1074.3" y2="348" stroke="#1a232e"/>
+<text x="1074.3" y="366" fill="#5d6b7d" font-size="11" text-anchor="middle">14:00</text>
 <text x="158" y="45.0" fill="#8b98aa" font-size="11.5" text-anchor="end">人气热卖</text>
-<rect x="376.9" y="34" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:10 · 最多 9 款</title></rect>
+<rect x="368.9" y="34" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>人气热卖 · 10:53 → 14:20 · 最多 9 款</title></rect>
 <text x="158" y="67.0" fill="#8b98aa" font-size="11.5" text-anchor="end">精选单人餐</text>
-<rect x="376.9" y="56" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:10 · 最多 4 款</title></rect>
+<rect x="368.9" y="56" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.60"><title>精选单人餐 · 10:53 → 14:20 · 最多 4 款</title></rect>
 <text x="158" y="89.0" fill="#8b98aa" font-size="11.5" text-anchor="end">鸡肉汉堡 /卷</text>
-<rect x="376.9" y="78" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:10 · 最多 18 款</title></rect>
+<rect x="368.9" y="78" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>鸡肉汉堡 /卷 · 10:53 → 14:20 · 最多 18 款</title></rect>
 <text x="158" y="111.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食拼盘 /多人餐</text>
-<rect x="376.9" y="100" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:10 · 最多 7 款</title></rect>
+<rect x="368.9" y="100" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.82"><title>小食拼盘 /多人餐 · 10:53 → 14:20 · 最多 7 款</title></rect>
 <text x="158" y="133.0" fill="#8b98aa" font-size="11.5" text-anchor="end">蘸酱炸鸡</text>
-<rect x="376.9" y="122" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="122" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>蘸酱炸鸡 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="155.0" fill="#8b98aa" font-size="11.5" text-anchor="end">随心配 1+1</text>
-<rect x="376.9" y="144" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:10 · 最多 2 款</title></rect>
+<rect x="368.9" y="144" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.45"><title>随心配 1+1 · 10:53 → 14:20 · 最多 2 款</title></rect>
 <text x="158" y="177.0" fill="#8b98aa" font-size="11.5" text-anchor="end">大堡口福 单人餐</text>
-<rect x="376.9" y="166" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:10 · 最多 1 款</title></rect>
+<rect x="368.9" y="166" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.38"><title>大堡口福 单人餐 · 10:53 → 14:20 · 最多 1 款</title></rect>
 <text x="158" y="199.0" fill="#8b98aa" font-size="11.5" text-anchor="end">巨无霸 牛鱼肉堡</text>
-<rect x="376.9" y="188" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:10 · 最多 20 款</title></rect>
+<rect x="368.9" y="188" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>巨无霸 牛鱼肉堡 · 10:53 → 14:20 · 最多 20 款</title></rect>
 <text x="158" y="221.0" fill="#8b98aa" font-size="11.5" text-anchor="end">安格斯MAX 厚牛堡</text>
-<rect x="376.9" y="210" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="210" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>安格斯MAX 厚牛堡 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="243.0" fill="#8b98aa" font-size="11.5" text-anchor="end">炸鸡</text>
-<rect x="376.9" y="232" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:10 · 最多 12 款</title></rect>
+<rect x="368.9" y="232" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>炸鸡 · 10:53 → 14:20 · 最多 12 款</title></rect>
 <text x="158" y="265.0" fill="#8b98aa" font-size="11.5" text-anchor="end">小食甜品 /其他</text>
-<rect x="376.9" y="254" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:10 · 最多 17 款</title></rect>
+<rect x="368.9" y="254" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>小食甜品 /其他 · 10:53 → 14:20 · 最多 17 款</title></rect>
 <text x="158" y="287.0" fill="#8b98aa" font-size="11.5" text-anchor="end">开心乐园</text>
-<rect x="376.9" y="276" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>开心乐园 · 10:53 → 14:10 · 最多 5 款</title></rect>
+<rect x="368.9" y="276" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.68"><title>开心乐园 · 10:53 → 14:20 · 最多 5 款</title></rect>
 <text x="158" y="309.0" fill="#8b98aa" font-size="11.5" text-anchor="end">500 大卡套餐</text>
-<rect x="376.9" y="298" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:10 · 最多 6 款</title></rect>
+<rect x="368.9" y="298" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.75"><title>500 大卡套餐 · 10:53 → 14:20 · 最多 6 款</title></rect>
 <text x="158" y="331.0" fill="#8b98aa" font-size="11.5" text-anchor="end">饮品</text>
-<rect x="376.9" y="320" width="773.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:10 · 最多 13 款</title></rect>
+<rect x="368.9" y="320" width="781.1" height="13" rx="2" fill="#3ddc97" opacity="0.90"><title>饮品 · 10:53 → 14:20 · 最多 13 款</title></rect>
 </svg></details>
 <footer>
 <p>采样间隔约 10 分钟。色块是一版菜单，颜色相同表示菜单相同。数据来自麦当劳中国 MCP 的 <code>query-meals</code> 实时返回，未做人工修饰；采样中断的时段留空，不插值。</p>

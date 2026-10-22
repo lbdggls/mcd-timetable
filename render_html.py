@@ -488,6 +488,11 @@ def render(data_dir: Path) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>麦门时刻表 · 一家麦当劳的菜单一天换几次</title>
+<meta property="og:title" content="麦当劳的菜单，是一张时刻表">
+<meta property="og:description" content="每 10 分钟采样一次门店在售菜单，记录一天里几点开市、几点换班、换掉了什么。">
+<meta property="og:image" content="https://lbdggls.github.io/mcd-timetable/docs/share-card.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root {{ color-scheme: dark; }}
 body {{ margin:0; background:#0a0e13; color:#d8e0ea; font:15px/1.7 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }}
